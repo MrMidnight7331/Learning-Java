@@ -67,8 +67,6 @@ public class Main {
 
         int rc = JOptionPane.showOptionDialog(null, "Maybe try looking outside your fucking window?", "IDFK what the weather is in: " + input, JOptionPane.INFORMATION_MESSAGE, 1, null, buttons, buttons[0]);
 
-        System.out.println(rc);
-
         if(rc==0){
             JOptionPane.showMessageDialog(null,"Then go outside dude, stupid ass mf!", "-1000IQ", JOptionPane.INFORMATION_MESSAGE);
         }
