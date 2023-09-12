@@ -70,7 +70,7 @@ public class Main {
         System.out.println(rc);
 
         if(rc==0){
-            JOptionPane.showMessageDialog(null,"Then go outside dude, stupid ass mf...", "-1000IQ", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null,"Then go outside dude, stupid ass mf!", "-1000IQ", JOptionPane.INFORMATION_MESSAGE);
         }
         else{
             System.exit(0);
