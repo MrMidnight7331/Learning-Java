@@ -1,3 +1,5 @@
+// Rock Paper Scissors
+// BY: MrMidnight
 import java.util.Random;
 import javax.swing.JOptionPane;
 //import java.util.Scanner;
