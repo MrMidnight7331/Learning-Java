@@ -4,6 +4,7 @@
 import javax.swing.*;
 import java.awt.*;
 
+// Create the statusbar
 class statusbar {
     JFrame frame = new JFrame();
     JProgressBar bar = new JProgressBar();
@@ -57,6 +58,7 @@ class statusbar {
 }
 
 public class Main {
+    //Shows input dialogue, executes statusbar, button window, message window
     public static void main(String[] args) {
         String input = JOptionPane.showInputDialog(null, "Enter your location:", "Smart weather forecast", JOptionPane.INFORMATION_MESSAGE);
         while (input.isBlank()) {

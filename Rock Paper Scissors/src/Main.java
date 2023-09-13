@@ -4,6 +4,7 @@ import javax.swing.JOptionPane;
 
 public class Main {
     public static void main(String[] args) {
+        //input dialogue
 
         //Scanner scanner = new Scanner(System.in);
         //System.out.println("rock|paper|scissors");
@@ -12,7 +13,7 @@ public class Main {
             System.exit(0);
         }
 
-
+        // RNG
         Random random = new Random();
         int randomNum = random.nextInt(3);
 
@@ -49,21 +50,22 @@ public class Main {
             if (playermove == null) {
                 System.exit(0);
             }
-
         }
 
+         // Who wins who looses
         if(playermove.equals(computermove) || playermove.matches(computermoves)) {
             JOptionPane.showMessageDialog(null,"It's a draw!","Computer chose: " +  computermove, JOptionPane.INFORMATION_MESSAGE);
             //System.out.println("Its a draw!");
         } else if (playerWins(playermove,computermove,computermoves)) {
             //System.out.println("Player wins!");
             JOptionPane.showMessageDialog(null,"Player wins!","Computer chose: " +  computermove, JOptionPane.INFORMATION_MESSAGE);
-
         } else {
             //System.out.println("Computer wins!");
             JOptionPane.showMessageDialog(null,"Computer wins!", "Computer chose: " + computermove, JOptionPane.INFORMATION_MESSAGE);
         }
     }
+
+    //boolean to determin who wins and who looses
     static boolean playerWins(String playermove, String computermove, String computermoves){
 
         // first letter of rock paper and scissors can be taken as input too
