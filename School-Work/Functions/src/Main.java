@@ -1,4 +1,4 @@
-// Set-Get Methods
+// Function, Set-Get-Methods, Parameters
 // 21.September.2023
 // By: Tieno
 class Mensch {
