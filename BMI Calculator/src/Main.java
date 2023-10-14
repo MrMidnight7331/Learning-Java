@@ -1,4 +1,4 @@
-// BIM Calculator
+// BMI Calculator
 // By: MrMidnight
 
 import java.text.DecimalFormat;
@@ -15,7 +15,7 @@ public class Main{
 
         while (true){
             // Asking for weight input
-            String weightInput = JOptionPane.showInputDialog(null, "Enter your weight in Kilogram", "IBM Calculator", JOptionPane.INFORMATION_MESSAGE);
+            String weightInput = JOptionPane.showInputDialog(null, "Enter your weight in Kilogram", "BMI Calculator", JOptionPane.INFORMATION_MESSAGE);
 
             if (weightInput == null){
                 System.exit(0); // exit if user presses cancel
@@ -36,7 +36,7 @@ public class Main{
             }
 
             // Asking for height input
-            String heightInput = JOptionPane.showInputDialog(null, "Enter your height in Meters", "IBM Calculator", JOptionPane.INFORMATION_MESSAGE);
+            String heightInput = JOptionPane.showInputDialog(null, "Enter your height in Meters", "BMI Calculator", JOptionPane.INFORMATION_MESSAGE);
 
             if (heightInput == null){
                 System.exit(0); // exit if user presses cancel
@@ -56,31 +56,31 @@ public class Main{
             }
 
 
-            // Calculating the BIM
-            double BIM = weight / (height * height);
+            // Calculating the BMI
+            double BMI = weight / (height * height);
 
-                if (BIM <= 18.5) {
+                if (BMI <= 18.5) {
                     categories = "Underweight";
 
-                } else if (BIM >= 18.5 && BIM <= 24.9) {
+                } else if (BMI >= 18.5 && BMI <= 24.9) {
                     categories = "Normal";
 
-                } else if (BIM >= 25 && BIM <= 29.9) {
+                } else if (BMI >= 25 && BMI <= 29.9) {
                     categories = "Overweight";
 
-                } else if (BIM >= 30 && BIM <= 34.9) {
+                } else if (BMI >= 30 && BMI <= 34.9) {
                     categories = "Obese (Class 1)";
 
-                } else if (BIM >= 35 && BIM <= 39.9) {
+                } else if (BMI >= 35 && BMI <= 39.9) {
                     categories = "Obese (Class 2)";
 
-                } else if (BIM >= 40) {
+                } else if (BMI >= 40) {
                     categories = "Obese (Class 3)";
                 } else {
                     categories = "Invalid";
                 }
 
-                JOptionPane.showMessageDialog(null, "Your BIM is: " + df.format(BIM) + " and you are " + categories, "IBM Calculator", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Your BMI is: " + df.format(BMI) + " and you are " + categories, "BMI Calculator", JOptionPane.INFORMATION_MESSAGE);
         }
     }
 }
