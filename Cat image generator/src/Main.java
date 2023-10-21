@@ -47,7 +47,7 @@ public class Main {
             frame.dispose(); // Dispose of the old frame
         }
 
-        frame = new JFrame("Display JPG Image");
+        frame = new JFrame("Displaying " + file);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JLabel imageLabel = new JLabel();
