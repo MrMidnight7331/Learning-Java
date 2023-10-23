@@ -37,10 +37,10 @@ public class Main {
 
     // Fahren
     public void fahren(int km) {
-        int verbrauchtMenge = km * verbrauch;
-        if (verbrauchtMenge <= tankinhalt) {
+        int verbrauchsMenge = km * verbrauch;
+        if (verbrauchsMenge <= tankinhalt) {
             kilometerstand += km;
-            tankinhalt -= verbrauchtMenge;
+            tankinhalt -= verbrauchsMenge;
             System.out.println("Du hast: " + km + " hinter dir gelegt");
         } else {
             System.out.println("No Treibstoff :( Tanken bidde");
