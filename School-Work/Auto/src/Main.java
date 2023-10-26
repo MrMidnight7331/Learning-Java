@@ -42,6 +42,7 @@ public class Main {
             kilometerstand += km;
             tankinhalt -= verbrauchsMenge;
             System.out.println("Du hast: " + km + " hinter dir gelegt");
+            System.out.println("Du hast noch: " + tankinhalt + " Liter im Tank");
         } else {
             System.out.println("No Treibstoff :( Tanken bidde");
         }
