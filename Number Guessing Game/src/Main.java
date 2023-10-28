@@ -13,7 +13,7 @@ public class Main {
         int attempts = 5;
         int difficulty = 0;
         int cp_num = 0;
-        String diff = "";
+        int diff = 0;
 
         String[] buttons = { "Hard", "Medium", "Easy" };
 
@@ -22,17 +22,17 @@ public class Main {
         // Hard difficulty
         if (difficulty == 0){
             cp_num = random.nextInt(100) + 1;
-            diff = "0 - 100";
+            diff = 100;
 
         // Medium difficulty
         } else if (difficulty == 1) {
             cp_num = random.nextInt(50) + 1;
-            diff = "0 - 50";
+            diff = 50;
 
         // Easy difficulty
         } else if (difficulty == 2) {
             cp_num = random.nextInt(20) + 1;
-            diff = "0 - 20";
+            diff = 20;
 
         // Exit
         }else {
@@ -40,7 +40,7 @@ public class Main {
         }
 
         while (attempts > 0) {
-            String player_input = JOptionPane.showInputDialog(null, "Enter your guess:", "I am thinking of a number between " + diff , JOptionPane.INFORMATION_MESSAGE);
+            String player_input = JOptionPane.showInputDialog(null, "Enter your guess:", "I am thinking of a number between 0 - " + diff , JOptionPane.INFORMATION_MESSAGE);
 
             if (player_input == null) {
                 System.exit(0);
@@ -53,8 +53,8 @@ public class Main {
                 continue;
             }
 
-            if (player_num < 1 || player_num > 100) {
-                JOptionPane.showMessageDialog(null, "Input must be between 1 and 100!", "Invalid Input!", JOptionPane.INFORMATION_MESSAGE);
+            if (player_num < 1 || player_num > diff) {
+                JOptionPane.showMessageDialog(null, "Input must be between 0 - " + diff, "Invalid Input!", JOptionPane.INFORMATION_MESSAGE);
                 continue;
             }
 
@@ -63,12 +63,12 @@ public class Main {
                 System.exit(0);
 
             } else if (player_num > cp_num) {
-                JOptionPane.showMessageDialog(null, "The number is smaller than " + player_num, "Remaining attempts: " + attempts, JOptionPane.INFORMATION_MESSAGE);
                 attempts--;
+                JOptionPane.showMessageDialog(null, "The number is smaller than " + player_num, "Remaining attempts: " + attempts, JOptionPane.INFORMATION_MESSAGE);
 
             } else if (player_num < cp_num) {
-                JOptionPane.showMessageDialog(null, "The number is bigger than " + player_num, "Remaining attempts: " + attempts, JOptionPane.INFORMATION_MESSAGE);
                 attempts--;
+                JOptionPane.showMessageDialog(null, "The number is bigger than " + player_num, "Remaining attempts: " + attempts, JOptionPane.INFORMATION_MESSAGE);
             }
         }
 
