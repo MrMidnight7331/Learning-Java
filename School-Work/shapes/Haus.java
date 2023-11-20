@@ -4,14 +4,11 @@ public class Haus {
     private Square square;
     private Triangle t;
     private Square fenster;
-
-    private boolean visibility = true;
-
+    public boolean visibility = false;
     private int square_size = 150;
     private int square_hor = 100;
     private int square_ver = 200;
     private String haus_col = "black";
-
     private int tri_size_ver = 150;
     private int tri_size_hor = 200;
     private int tri_hor = 183;
@@ -22,12 +19,19 @@ public class Haus {
     private int fens_ver = 230;
     private String fens_col = "yellow";
 
+    public boolean lichtan() {
+        visibility = true;
+        fenster.makeVisible();
+        fenster.changeColor(fens_col);
+        return visibility;
+    }
+
 
     public Haus() {
         square = new Square();
         t = new Triangle();
         fenster = new Square();
-        
+
         // Square
         square.makeVisible();
         square.changeColor(haus_col);
@@ -43,14 +47,15 @@ public class Haus {
         t.moveVertical(tri_ver);
 
         // Fenster
-        fenster.makeVisible();
-        fenster.changeColor(fens_col);
+        if (visibility) {
+            fenster.makeVisible();
+            fenster.changeColor(fens_col);
+        } else {
+            fenster.makeInvisible();
+        }
+
         fenster.changeSize(fens_size);
         fenster.moveHorizontal(fens_hor);
         fenster.moveVertical(fens_ver);
     }
-    
-
-    // Add a setter method for fens_col
-
 }

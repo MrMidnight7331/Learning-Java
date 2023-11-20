@@ -2,7 +2,6 @@ package shapes;
 
 import java.awt.*;
 
-
 public class Square
 {
     private int size;
