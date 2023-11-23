@@ -1,5 +1,10 @@
-package shapes;
+/**
+ * @project Haus
+ * @author Tieno
+ * @version 1.8
+ */
 
+package shapes;
 public class Haus {
     private Square square;
     private Triangle t;
@@ -48,7 +53,7 @@ public class Haus {
         // Square
         square.makeVisible();
         square.changeColor(haus_col);
-        square.changeSize(square_size);
+        square.changeSize(square_size, square_size);
         square.moveHorizontal(square_hor);
         square.moveVertical(square_ver);
 
@@ -59,15 +64,9 @@ public class Haus {
         t.moveHorizontal(tri_hor);
         t.moveVertical(tri_ver);
 
-        // Fenster
-        if (visibility) {
-            fenster.makeVisible();
-            fenster.changeColor(fens_col);
-        } else {
-            fenster.makeInvisible();
-        }
 
-        fenster.changeSize(fens_size);
+
+        fenster.changeSize(fens_size, fens_size);
         fenster.moveHorizontal(fens_hor);
         fenster.moveVertical(fens_ver);
     }

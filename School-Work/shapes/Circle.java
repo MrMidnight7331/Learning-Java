@@ -1,6 +1,5 @@
 package shapes;
 
-import java.awt.*;
 import java.awt.geom.*;
 
 /**
@@ -75,7 +74,7 @@ public class Circle
     /**
      * Move the circle a few pixels down.
      */
-    public void moveDown()
+    public void moveDown(int i)
     {
         moveVertical(20);
     }
