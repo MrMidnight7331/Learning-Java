@@ -1,5 +1,5 @@
 /**
- * @project: Haus malen
+ * @project: Shapes n shit
  * @author: Tieno
  */
 package shapes;

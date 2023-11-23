@@ -20,10 +20,23 @@ public class Haus {
     private String fens_col = "yellow";
 
     public boolean lichtan() {
-        visibility = true;
-        fenster.makeVisible();
-        fenster.changeColor(fens_col);
-        return visibility;
+        if(visibility){
+            visibility = false;
+            fenster.makeInvisible();
+            //fenster.changeColor(fens_col);
+            return visibility;
+        }
+        else{
+
+            visibility = true;
+            fenster.makeVisible();
+            fenster.changeColor(fens_col);
+            return visibility;
+
+        }
+
+
+
     }
 
 
