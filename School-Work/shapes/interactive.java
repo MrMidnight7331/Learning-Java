@@ -1,6 +1,12 @@
-package shapes;
+/**
+ * @project Interactive panel
+ * @author Tieno
+ * @version 1.2
+ */
 
+package shapes;
 import javax.swing.*;
+
 public class Interactive {
     public static void main(String[] args) throws InterruptedException {
         Haus haus;
