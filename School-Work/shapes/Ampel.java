@@ -5,7 +5,6 @@
  */
 
 package shapes;
-
 public class Ampel {
     private Square frame;
     private Circle light;
@@ -56,8 +55,6 @@ public class Ampel {
         }
 
     }
-
-
     private void creatLight() {
         light = new Circle();  // Create a new light
         light.makeVisible();
@@ -77,6 +74,6 @@ public class Ampel {
         frame.moveVertical(frameY);
         frame.changeColor("black");
 
-        creatLight();  // Create and show the initial light (red)
+        creatLight();  // Create the initial light (red)
     }
 }
