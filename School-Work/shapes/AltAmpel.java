@@ -1,3 +1,9 @@
+/**
+ * @project AltAmpel
+ * @author Tieno
+ * @version 2.0
+ */
+
 package shapes;
 
 public class AltAmpel {

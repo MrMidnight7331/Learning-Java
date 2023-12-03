@@ -7,8 +7,7 @@
 package shapes;
 
 public class Main {
-    public static void main(String[] args) {
-
+    public static void main(String[] args) throws InterruptedException {
 
         Interactive interactive = new Interactive();
         try {
@@ -16,7 +15,6 @@ public class Main {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
 
 
 

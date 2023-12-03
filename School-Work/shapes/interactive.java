@@ -1,8 +1,9 @@
 /**
- * @project Interactive panel
+ * @project Interactive Panel
  * @author Tieno
- * @version 1.2
+ * @version 3.4
  */
+
 
 package shapes;
 import javax.swing.*;
@@ -11,10 +12,12 @@ public class Interactive {
     public static void main(String[] args) throws InterruptedException {
         Haus haus;
         Ampel ampel;
+        AltAmpel altAmpel;
 
-        String[] buttonInit = { "Ampel", "Haus" };
+        String[] buttonInit = { "Ampel", "Haus", "AltAmpel" };
         String[] buttonHaus = { "light aus", "licht an" };
         String[] buttonAmpel = { "Automatisch", "Grün", "Gelb", "Rot" };
+        String[] buttonAltAmpel = { "Automatisch", "Grün", "Gelb", "Rot" };
 
         int initChoice = JOptionPane.showOptionDialog(null, "Projekt:", "Shapes n shit", JOptionPane.INFORMATION_MESSAGE, 1, null, buttonInit, buttonInit);
 
@@ -47,6 +50,24 @@ public class Interactive {
                 ampel.change();
             } else {
                 ampel = new Ampel();
+            }
+        } else if (initChoice == 2) {
+            int altAmpelChoice = JOptionPane.showOptionDialog(null, "AltAmpel Funktionen:", "AltAmpel", JOptionPane.INFORMATION_MESSAGE, 1, null, buttonAltAmpel, buttonAltAmpel);
+
+            if (altAmpelChoice == -1) {
+                System.exit(0);
+            } else {
+                altAmpel = new AltAmpel();
+
+                if (altAmpelChoice == 0) {
+                    altAmpel.autoChange();
+                } else if (altAmpelChoice == 1) {
+                    altAmpel.change();
+                    altAmpel.change();
+                } else if (altAmpelChoice == 2) {
+                    altAmpel.change();
+                } else {
+                }
             }
         }
     }
