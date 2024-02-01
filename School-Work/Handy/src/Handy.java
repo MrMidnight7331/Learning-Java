@@ -15,23 +15,23 @@ public class Handy {
         zustand = 0; // Phone off
     }
 
-    public void turnon() {
+    public void anschalten() {
         if (zustand == 0) {
             zustand = 1; // Phone on, but not active
         }
     }
 
-    public void turnoff() {
+    public void ausschalten() {
         zustand = 0; // Phone off
     }
 
-    public void pinChange(int pinAlt, int pinNeu) {
+    public void pinWechseln(int pinAlt, int pinNeu) {
         if (pin == pinAlt) {
             pin = pinNeu;
         }
     }
 
-    public void activate(int pPin) {
+    public void aktivieren(int pPin) {
         if (zustand == 1 && pin == pPin) {
             zustand = 2; // Phone on and active
         }
@@ -41,11 +41,11 @@ public class Handy {
         return zustand;
     }
 
-    public int getNumber() {
+    public int getNummer() {
         return nummer;
     }
 
-    public void SendMessage(String text, Handy h) {
+    public void SendNachricht(String text, Handy h) {
         if (zustand == 2) {
             h.nachrichtEmpfangen(text);
         }
