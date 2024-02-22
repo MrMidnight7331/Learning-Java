@@ -9,6 +9,8 @@ public class Handy {
     private int nummer;
     private int zustand;
 
+    private Provider prov;
+
     public Handy(int pNummer, int pPin) {
         nummer = pNummer;
         pin = pPin;
@@ -45,9 +47,9 @@ public class Handy {
         return nummer;
     }
 
-    public void SendNachricht(String text, Handy h) {
+    public void SendNachricht(String text, int phonenum) {
         if (zustand == 2) {
-            h.nachrichtEmpfangen(text);
+            prov.forwardmessage(text, phonenum);
         }
     }
 
@@ -55,5 +57,14 @@ public class Handy {
         if (zustand == 2) {
             System.out.println("Empfangene Nachricht von Handy Nummer " + nummer + ": " + text);
         }
+    }
+    public void connectprov(Provider pp){
+        if (zustand == 2) {
+            prov = pp;
+        }
+    }
+    public void disconnectprov(){
+            prov = null;
+
     }
 }
