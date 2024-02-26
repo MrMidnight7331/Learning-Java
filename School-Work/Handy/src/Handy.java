@@ -6,13 +6,13 @@
 
 public class Handy {
     private int pin;
-    private int nummer;
+    private int mynummer;
     private int zustand;
 
     private Provider prov;
 
-    public Handy(int pNummer, int pPin) {
-        nummer = pNummer;
+    public Handy(int pmynummer, int pPin) {
+        mynummer = pmynummer;
         pin = pPin;
         zustand = 0; // Phone off
     }
@@ -43,8 +43,8 @@ public class Handy {
         return zustand;
     }
 
-    public int getNummer() {
-        return nummer;
+    public int getmynummer() {
+        return mynummer;
     }
 
     public void SendNachricht(String text, int phonenum) {
@@ -55,7 +55,7 @@ public class Handy {
 
     public void nachrichtEmpfangen(String text) {
         if (zustand == 2) {
-            System.out.println("Empfangene Nachricht von Handy Nummer " + nummer + ": " + text);
+            System.out.println("Empfangene Nachricht von Handy mynummer " + mynummer + ": " + text);
         }
     }
     public void connectprov(Provider pp){
@@ -64,7 +64,7 @@ public class Handy {
         }
     }
     public void disconnectprov(){
-            prov = null;
+        prov = null;
 
     }
 }

@@ -30,14 +30,14 @@ public class Provider {
         handy3 = null;
     }
     public void forwardmessage(String text, int phonenum){
-        if (phonenum == handy1.getNummer()){
+        if (phonenum == handy1.getmynummer()){
+            handy1.nachrichtEmpfangen(text);
+        }
+        if (phonenum == handy2.getmynummer()){
             handy2.nachrichtEmpfangen(text);
         }
-        if (phonenum == handy2.getNummer()){
+        if (phonenum == handy3.getmynummer()){
             handy3.nachrichtEmpfangen(text);
-        }
-        if (phonenum == handy3.getNummer()){
-            handy1.nachrichtEmpfangen(text);
         }
     }
 }
