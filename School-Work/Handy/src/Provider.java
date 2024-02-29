@@ -1,25 +1,17 @@
 /**
  * @project Provider
  * @author Tieno
- * @version 3.0
+ * @version 4.0
  */
 public class Provider {
-
-
     private String name;
-    private Handy handy1;
-    private Handy handy2;
-    private Handy handy3;
-
-    Handy[] handys = {handy1, handy2, handy3};
+    Handy[] handys;
 
     public Provider(){
         name = "vodaphone";
-        handy1 = handy1;
-        handy2 = handy2;
-        handy3 = handy3;
-
+        handys = new Handy[3];
     }
+
     public void connectphone(Handy pHandy){
         for (int i = 0; i < handys.length; i++){
             if (handys[i] == null){
@@ -41,11 +33,11 @@ public class Provider {
         }
     }
 
-        public void forwardmessage (String text,int phonenum){
-            for (int i = 0; i < handys.length; i++) {
-                if (handys[i].getmynummer() == phonenum) {
-                    handys[i].nachrichtEmpfangen(text);
-                }
+    public void forwardmessage (String text,int phonenum){
+        for (int i = 0; i < handys.length; i++) {
+            if (handys[i].getmynummer() == phonenum) {
+                handys[i].nachrichtEmpfangen(text);
             }
         }
     }
+}
