@@ -1,8 +1,17 @@
+/**
+ * @project Provider
+ * @author Tieno
+ * @version 3.0
+ */
 public class Provider {
+
+
     private String name;
     private Handy handy1;
     private Handy handy2;
     private Handy handy3;
+
+    Handy[] handys = {handy1, handy2, handy3};
 
     public Provider(){
         name = "vodaphone";
@@ -11,33 +20,32 @@ public class Provider {
         handy3 = handy3;
 
     }
-    public void connecthphone1(Handy pHandy){
-        handy1 = pHandy;
-    }
-    public void connecthphone2(Handy pHandy){
-        handy2 = pHandy;
-    }
-    public void connecthphone3(Handy pHandy){
-        handy3 = pHandy;
-    }
-    public void disconnecthphone1(){
-        handy1 = null;
-    }
-    public void disconnecthphone2(){
-        handy2 = null;
-    }
-    public void disconnecthphone3(){
-        handy3 = null;
-    }
-    public void forwardmessage(String text, int phonenum){
-        if (phonenum == handy1.getmynummer()){
-            handy1.nachrichtEmpfangen(text);
-        }
-        if (phonenum == handy2.getmynummer()){
-            handy2.nachrichtEmpfangen(text);
-        }
-        if (phonenum == handy3.getmynummer()){
-            handy3.nachrichtEmpfangen(text);
+    public void connectphone(Handy pHandy){
+        for (int i = 0; i < handys.length; i++){
+            if (handys[i] == null){
+                handys[i] = pHandy;
+                break;
+            }
+            else {
+                System.out.println("All slots r full UwU");
+            }
         }
     }
-}
+
+    public void disconnectphone() {
+        for (int i = 0; i < handys.length; i++) {
+            if (handys[i] != null) {
+                handys[i] = null;
+                break;
+            }
+        }
+    }
+
+        public void forwardmessage (String text,int phonenum){
+            for (int i = 0; i < handys.length; i++) {
+                if (handys[i].getmynummer() == phonenum) {
+                    handys[i].nachrichtEmpfangen(text);
+                }
+            }
+        }
+    }
