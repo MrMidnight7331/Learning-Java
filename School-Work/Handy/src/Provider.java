@@ -9,7 +9,6 @@ public class Provider {
 
     public Provider(){
         name = "vodaphone";
-        handys = new Handy[3];
     }
 
     public void connectphone(Handy pHandy){
