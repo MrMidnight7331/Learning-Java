@@ -1,11 +1,11 @@
 /**
  * @project Provider
  * @author Tieno
- * @version 4.1
+ * @version 4.2
  */
 public class Provider {
     private String name;
-    Handy[] handys;
+    Handy[] handys = new Handy[3];
 
     public Provider(){
         name = "vodaphone";
