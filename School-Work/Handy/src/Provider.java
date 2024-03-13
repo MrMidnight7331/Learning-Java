@@ -15,7 +15,6 @@ public class Provider {
         for (int i = 0; i < handys.length; i++){
             if (handys[i] == null){
                 handys[i] = pHandy;
-                break;
             }
             else {
                 System.out.println("All slots r full UwU");
@@ -27,7 +26,6 @@ public class Provider {
         for (int i = 0; i < handys.length; i++) {
             if (handys[i] != null) {
                 handys[i] = null;
-                break;
             }
         }
     }
