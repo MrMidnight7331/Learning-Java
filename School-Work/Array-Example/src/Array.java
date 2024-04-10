@@ -1,6 +1,6 @@
 /**
  * @project Array-Example
- * @author  Tieno
+ * @author Tieno
  * @version 1.0
  */
 
