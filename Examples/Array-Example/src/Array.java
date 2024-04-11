@@ -5,10 +5,10 @@
  */
 
 public class Array { // Define class
-    private int[] nums; // Creats an array called nums
+    int[] nums; // Creats an array called nums
 
-    public      Array() { // Constructur
-        nums = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 0}; // Gives number 1 - 10 into array
+    public Array() { // Constructur
+        nums = new int[] {10, 9, 8, 7, 6, 5, 4, 3, 2, 1}; // Gives number 1 - 10 into array
         for (int i = 0; i < nums.length; i++) { // the integer i is = 0, while i is smaller than the length of num, i + 1
             System.out.println(nums[i]); //print everything inside num
         }
