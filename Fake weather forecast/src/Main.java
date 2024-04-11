@@ -1,6 +1,5 @@
 // Fake weather forecast
 // By: MrMidnight
-
 import javax.swing.*;
 import java.awt.*;
 
