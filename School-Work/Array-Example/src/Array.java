@@ -31,4 +31,13 @@ public class Array { // Define class
             System.out.println("Error: x should be between 1 and 10."); // print error message
         }
     }
+    public void max(){
+        int max = nums[0];
+        for(int i = 1; i < nums.length; i++){
+            if(nums[i] > max){
+            max = nums[i]; 
+            }
+        }
+        System.out.println("The maximum num is: " + max);
+    }
 }
