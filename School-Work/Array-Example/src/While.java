@@ -45,4 +45,13 @@ public class While {
         System.out.println("Index of maximum number: " + maxIndex);
         System.out.println("Index of minimum number: " + minIndex);
     }
+
+    public void onestimesseven(){
+        int i = 1;
+        while (i <= 10) {
+            int result = i * 7;
+            System.out.println(result);
+            i++;
+        }
+    }
 }
