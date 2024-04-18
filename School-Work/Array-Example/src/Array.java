@@ -25,8 +25,6 @@ public class Array { // Define class
             for (int i = 0; i < x; i++){
                 System.out.println(nums[i]);
             }
-
-
         } else {
             System.out.println("Error: x should be between 1 and 10."); // print error message
         }
@@ -38,6 +36,36 @@ public class Array { // Define class
             max = nums[i]; 
             }
         }
-        System.out.println("The maximum num is: " + max);
+        System.out.println("Largest num is: " + max);
+    }
+
+    public void maxidx(){
+        int maxidx = 0;
+        for(int i = 1; i < nums.length; i++){
+            if(nums[i] > nums[maxidx]){
+                maxidx = i;
+            }
+        }
+        System.out.println("Largest num index is: " + maxidx);
+    }
+
+    public void min(){
+        int min = nums[0];
+        for(int i = 1; i < nums.length; i++){
+            if(nums[i] > min){
+                min = nums[i]; 
+            }
+        }
+        System.out.println("Largest num is: " + min);
+    }
+
+    public void minidx(){
+        int minidx = 0;
+        for(int i = 1; i < nums.length; i++){
+            if(nums[i] < nums[minidx]){
+                minidx = i;
+            }
+        }
+        System.out.println("Smallest num index is: " + minidx);
     }
 }
