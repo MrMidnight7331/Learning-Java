@@ -18,4 +18,31 @@ public class While {
             i++;
         }
     }
+
+    public void forwhileMaxMinNumberIndex(){
+        int max = nums[0];
+        int min = nums[0];
+        int maxIndex = nums[0];
+        int minIndex = nums[0];
+
+        int i = 1;
+        while (i < nums.length) {
+            if (nums[i] > max) {
+                max = nums[i];
+                maxIndex = i;
+            }
+
+            if (nums[i] < min) {
+                min = nums[i];
+                minIndex = i;
+            }
+
+            i++;
+        }
+
+        System.out.println("Maximum number: " + max);
+        System.out.println("Minimum number: " + min);
+        System.out.println("Index of maximum number: " + maxIndex);
+        System.out.println("Index of minimum number: " + minIndex);
+    }
 }
