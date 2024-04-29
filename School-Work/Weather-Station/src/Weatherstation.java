@@ -63,4 +63,21 @@ public class Weatherstation
 			}
 		}
 	}
+	public void min2(){
+		int tmp = temp[0];
+		int tmp2 = temp[0]; 
+		for(int i=0; i<temp.length; i++){
+			if (tmp > temp[i]){
+				tmp2 = tmp;
+				tmp = temp[i];
+			} else if (tmp2 > temp[i]){
+				tmp2 = temp[i];
+			}
+		}
+		System.out.println("Min temp is: " + tmp);
+		System.out.println("Second min temp is: " + tmp2);
+
+
+	}
+
 }
