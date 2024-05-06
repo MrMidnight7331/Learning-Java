@@ -129,21 +129,35 @@ public class Weatherstation {
 	public void output(){
 		for (int i = 0; i < january.length; i++) {
 			if (january[i] != null) {
-				System.out.println(january[i]);
+				System.out.println("Min temp = " + (i++) + january[i].getMinTemp());
+				System.out.println("Max temp = " + (i++) + january[i].getMaxTemp());
+				System.out.println("Rain possibility = " + (i++) + january[i].getRainposs());
+				System.out.println("Daytime = " + (i++) + january[i].getdaytime());
+				System.out.println("Slippery gound = " + (i++) + january[i].getslip());
 			}
-		}
+		} 
 	}
 	
 	public void average_day(){
-		
+
+		int tmp = 0;
+		int dayz = 0;
+
+		for (int i = 0; i < january.length; i++) {
+			if (january[i] != null) {
+				
+				tmp += january[i].getMaxTemp();
+			 	dayz += 1;
+			}
+		}
+		System.out.println("Average temp is: " + (tmp / dayz));
 	}
 	
 	public void get_min_day(){
-        System.out.println(january[0].getMinTemp());
+		
     }
    
     public void max_day(){
-		System.out.println(january[0].getMaxTemp());
       
     }
     

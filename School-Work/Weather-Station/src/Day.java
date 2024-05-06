@@ -27,7 +27,7 @@ public class Day{
         return tempMax;
     }
     
-    public int getRegenwahr(){
+    public int getRainposs(){
         return rainpossible;
     }
     
