@@ -154,18 +154,48 @@ public class Weatherstation {
 	}
 	
 	public void get_min_day(){
-		
+		int min_tmp = january[0].getMinTemp();
+		for (int i = 0; i < january.length; i++) {
+			if (january[i] != null) {
+				if (min_tmp > january[i].getMinTemp()) {
+					min_tmp = january[i].getMinTemp();
+				}
+			}
+			System.out.println("Min temp is: " + min_tmp);
+		}
     }
    
     public void max_day(){
-      
+		int max_tmp = january[0].getMaxTemp();
+		for (int i = 0; i < january.length; i++) {
+			if (january[i] != null) {
+				if (max_tmp < january[i].getMaxTemp()) {
+					max_tmp = january[i].getMaxTemp();
+				}
+			}
+			System.out.println("Max temp is: " + max_tmp);
+		}
     }
     
     public int search_day (int x){
-        return -1;
+		for (int i = 0; i < january.length; i++) {
+			if (january[i] != null) {
+				if (x == january[i].getMaxTemp()) {
+					return i+1;
+	
+				}
+			}
+		}
+		return -1;
     }
     
     public void weather_warning(){
+		for (int i = 0; i < january.length; i++) {
+			if (january[i] != null) {
+				System.out.println("Rainpossibility:" + january[i].getRainposs());
+				System.out.println("Slip: " + january[i].getslip());
+			}
+		}
         
     }
 }
