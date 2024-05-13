@@ -1,36 +1,40 @@
 import java.util.Random;
 
 public class Lottery {
-    private int[] numbers;
+    private int[] nums;
 
+    // Constructor to initialize the array with numbers 0-48
     public Lottery() {
-        numbers = new int[49];
+        nums = new int[49];
         for (int i = 0; i < 49; i++) {
-            numbers[i] = i + 1;
+            nums[i] = i + 1;
         }
     }
 
-    public void getNum() {
-        Random random = new Random();
-        int[] result = new int[6];
+    // Method to randomly draw 6 numbers
+    public void draw() {
+        Random rand = new Random();
+        int[] selectedNumbers = new int[6];
+        boolean[] alreadySelected = new boolean[50]; 
 
         for (int i = 0; i < 6; i++) {
-            result[i] = numbers[random.nextInt(49)];
-        }
+            int randomNumber;
 
-        // Check for duplicates and re-roll if necessary
-        for (int i = 0; i < 6; i++) {
-            for (int j = i + 1; j < 6; j++) {
-                if (result[i] == result[j]) {
-                    result[i] = numbers[random.nextInt(49)];
-                    i--; // re-roll the current number
+            while (true) {
+                randomNumber = rand.nextInt(49) + 1; // Generate a random number between 1 and 49
+                if (!alreadySelected[randomNumber]) {
                     break;
                 }
             }
+
+            selectedNumbers[i] = randomNumber;
+            alreadySelected[randomNumber] = true;
         }
-        for (int num : result) {
-            System.out.print(num + " ");
+        System.out.print("The lucky numbers are: ");
+
+        // Print out the selected numbers
+        for (int j = 0; j < 6; j++) {
+            System.out.print(selectedNumbers[j] + " ");
         }
     }
-
 }
