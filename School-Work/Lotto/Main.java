@@ -1,6 +1,9 @@
 public class Main {
     public static void main(String[] args) {
-        Lotto lo = new Lotto();
+
+        Lotto lotto = new Lotto();
+        lotto.get_lotto_numbers();
+
 
     }
 }
