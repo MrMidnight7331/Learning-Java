@@ -1,6 +1,4 @@
-// Java program for implementation of Insertion Sort 
 class InsertionSort { 
-	// Function to sort array using insertion sort 
 	void sort(int arr[]) 
 	{ 
 		int n = arr.length; 
@@ -19,7 +17,6 @@ class InsertionSort {
 		} 
 	} 
 
-	// A utility function to print array of size n 
 	static void printArray(int arr[]) 
 	{ 
 		int n = arr.length; 
