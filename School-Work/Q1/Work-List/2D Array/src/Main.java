@@ -1,6 +1,8 @@
 public class Main{
     public static void main(String[] args){
-        Array coffee = new Array();
-        coffee.extrude();
+        Game ga = new Game();
+        ga.left(2);
+        ga.right(1);
+        ga.down(1);
     }
 }
