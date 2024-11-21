@@ -1,24 +1,25 @@
 public class Main {
     public static void main(String[] args) {
-        Clinic Clinic = new Clinic();
+        Clinic clinic = new Clinic();
 
-        Clinic.recieve_patient("Herr Meier", "KPT");
-        Clinic.recieve_patient("Frau Schmidt", "KP");
-        Clinic.recieve_patient("Herr Overmann", "KPT");
-        Clinic.recieve_patient("Frau Groß", "PPT");
-        Clinic.recieve_patient("Herr Mohnsmeier", "NP");
-        Clinic.recieve_patient("Frau Seidel", "PP");
-        Clinic.recieve_patient("Herr Guntz", "KP");
-        Clinic.recieve_patient("Frau Petermann", "PP");
-        Clinic.recieve_patient("Frau Osterbach", "NP");
-        Clinic.recieve_patient("Herr Gansera", "KPT");
-
-        Clinic.print_list();
-
-        for(int i = 0; i< 10; i++){
-            Clinic.call();
-        }
-
+        clinic.recieve_patient2("Herr Meier", "KPT");
+        clinic.recieve_patient2("Frau Schmidt", "KP");
+        clinic.recieve_patient2("Herr Overmann", "KPT");
+        clinic.recieve_patient2("Frau Groß", "PPT");
+        clinic.recieve_patient2("Herr Mohnsmeier", "np");
+        clinic.recieve_patient2("Frau Seidel", "pp");
+        clinic.recieve_patient2("Herr Guntz", "kp");
         
+
+        clinic.print_list2();
+
+        clinic.call2();  
+        clinic.call2();  
+        clinic.call2();
+        clinic.call2();  
+        clinic.call2();  
+        clinic.call2(); 
+        clinic.call2();  
+
     }
 }

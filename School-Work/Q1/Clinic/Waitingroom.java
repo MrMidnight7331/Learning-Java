@@ -10,12 +10,12 @@ public class Waitingroom {
     }
 
     private int translateStatus(String status) {
-        if (status.equals("NP")) return 1;  // Notfallpatient
-        if (status.equals("KP")) return 2;  // Kassenpatient
-        if (status.equals("KPT")) return 3; // Kassenpatient mit Termin
-        if (status.equals("PP")) return 4;  // Privatpatient
-        if (status.equals("PPT")) return 5; // Privatpatient mit Termin
-        return 0; // Invalid status
+        if (status.toUpperCase().equals("NP")) return 1;  // Notfallpatient
+        if (status.toUpperCase().equals("KP")) return 2;  // Kassenpatient
+        if (status.toUpperCase().equals("KPT")) return 3; // Kassenpatient mit Termin
+        if (status.toUpperCase().equals("PP")) return 4;  // Privatpatient
+        if (status.toUpperCase().equals("PPT")) return 5; // Privatpatient mit Termin
+        return 0;
     }
 
     public void sign_patient(String name, String status) {
