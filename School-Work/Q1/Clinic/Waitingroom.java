@@ -9,7 +9,6 @@ public class Waitingroom {
         q5 = new Queue<Patient>();
     }
 
-    // Translate patient type to priority number
     private int translateStatus(String status) {
         if (status.equals("NP")) return 1;  // Notfallpatient
         if (status.equals("KP")) return 2;  // Kassenpatient
@@ -19,7 +18,6 @@ public class Waitingroom {
         return 0; // Invalid status
     }
 
-    // Add a patient to the appropriate queue
     public void sign_patient(String name, String status) {
         int numericStatus = translateStatus(status);
         Patient newPatient = new Patient(name, numericStatus);
@@ -32,7 +30,6 @@ public class Waitingroom {
         else System.out.println("Ungültiger Status für " + name);
     }
 
-    // Call the next patient based on priority
     public Patient call_patient() {
         if (!q1.isEmpty()) {
             Patient p = q1.front();
@@ -59,10 +56,9 @@ public class Waitingroom {
             q2.dequeue();
             return p;
         }
-        return null; // No patients in the queues
+        return null; 
     }
 
-    // Print the current waiting list
     public void print_waiting_list() {
         System.out.println("Aktuelle Warteliste:");
         System.out.println("Notfallpatienten: " + (q1.isEmpty() ? "Keine" : "Vorhanden"));
