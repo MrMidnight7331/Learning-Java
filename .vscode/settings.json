@@ -1,3 +1,10 @@
 {
-    "java.debug.settings.onBuildFailureProceed": true
+    "java.debug.settings.onBuildFailureProceed": true,
+    "java.project.sourcePaths": [
+        "School-Work/Q1/Work-List/2D Array/src",
+        "School-Work/Q1/Hospital",
+        "School-Work/Q1/Clinic",
+        "School-Work/Q1/Array Training/src",
+        "School-Work/Q1"
+    ]
 }
