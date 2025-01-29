@@ -3,11 +3,11 @@ class Shelf {
     double totalWeight = 0;
     double weightLimit;
 
-    Shelf(double weightLimit) {
+    public Shelf(double weightLimit) {
         this.weightLimit = weightLimit;
     }
 
-    boolean addBox(Box box) {
+    public boolean addBox(Box box) {
         if (weightLimit == -1 || totalWeight + box.weight <= weightLimit) {
             stack.push(box);
             totalWeight += box.weight;
@@ -18,7 +18,7 @@ class Shelf {
         return false;
     }
 
-    Box removeBox() {
+    public Box removeBox() {
         if (!stack.isEmpty()) {
             Box box = stack.peek();
             stack.pop();
@@ -30,7 +30,7 @@ class Shelf {
         return null;
     }
 
-    boolean isEmpty() {
+    public boolean isEmpty() {
         return stack.isEmpty();
     }
 }
