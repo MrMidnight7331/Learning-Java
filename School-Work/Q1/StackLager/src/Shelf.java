@@ -1,36 +1,48 @@
-class Shelf {
-    Stack<Box> stack = new Stack<>();
-    double totalWeight = 0;
-    double weightLimit;
-
+public class Shelf {
+    private Stack<Box> boxes;
+    private double totalWeight;
+    private double weightLimit; 
     public Shelf(double weightLimit) {
+        this.boxes = new Stack<>();
+        this.totalWeight = 0;
         this.weightLimit = weightLimit;
     }
 
-    public boolean addBox(Box box) {
-        if (weightLimit == -1 || totalWeight + box.weight <= weightLimit) {
-            stack.push(box);
-            totalWeight += box.weight;
-            System.out.printf("\n[INFO] Added Box %d | Weight: %.1f | Total Shelf Weight: %.1f\n", box.number, box.weight, totalWeight);
-            return true;
+
+    public boolean pushBox(Box box) {
+        if (weightLimit > 0 && (totalWeight + box.getWeight() > weightLimit)) {
+            return false; 
         }
-        System.out.printf("\n[WARNING] Cannot add Box %d. Weight limit exceeded.\n", box.number);
-        return false;
+        boxes.push(box);
+        totalWeight += box.getWeight();
+        return true;
     }
 
-    public Box removeBox() {
-        if (!stack.isEmpty()) {
-            Box box = stack.peek();
-            stack.pop();
-            totalWeight -= box.weight;
-            System.out.printf("\n[INFO] Removed Box %d | Weight: %.1f | Total Shelf Weight: %.1f\n", box.number, box.weight, totalWeight);
-            return box;
+    public Box popBox() {
+        if (boxes.isEmpty()) {
+            return null;
         }
-        System.out.println("\n[WARNING] Shelf is empty.\n");
-        return null;
+        Box topBox = boxes.peek(); 
+        boxes.pop();              
+        totalWeight -= topBox.getWeight();
+        return topBox;
     }
+
+
+    public Box peekBox() {
+        return boxes.peek();
+    }
+
 
     public boolean isEmpty() {
-        return stack.isEmpty();
+        return boxes.isEmpty();
+    }
+
+    public double getTotalWeight() {
+        return totalWeight;
+    }
+
+    public double getWeightLimit() {
+        return weightLimit;
     }
 }
