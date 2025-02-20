@@ -1,7 +1,7 @@
 public class Programm {
 	private List<Integer> liste;
 
-	public Programm() {
+	public Programm() { // Constructor
 		liste = new List<Integer>();
 
 		liste.append(500);

@@ -6,6 +6,5 @@ public class Main {
 		System.out.println("Maximaler Wert: " + programm.max());
 		System.out.println("Minimaler Wert: " + programm.min());
 		System.out.println("Search: " + programm.search(300));
-
 	}
 }
