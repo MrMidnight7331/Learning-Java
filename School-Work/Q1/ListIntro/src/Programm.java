@@ -36,31 +36,32 @@ public class Programm {
 		while (liste.hasAccess()) {
 			if (liste.getContent() > max) {
 				max = liste.getContent();
-				break;
+
 			}
+			liste.next();
 		}
 		return max;
 	}
 
 	public int min() {
-		int min = 0;
+		int min = Integer.MAX_VALUE;
 		liste.toFirst();
 		while (liste.hasAccess()) {
 			if (liste.getContent() < min) {
 				min = liste.getContent();
-				break;
-
 			}
+			liste.next();
 		}
 		return min;
 	}
 
-	public boolean search ( int x){
+	public boolean search (int x){
 		liste.toFirst();
 		while (liste.hasAccess()) {
 			if (liste.getContent() == x) {
 				return true;
 			}
+			liste.next();
 		}
 		return false;
 	}
