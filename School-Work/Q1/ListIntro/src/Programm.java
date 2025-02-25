@@ -7,6 +7,9 @@ public class Programm {
 		liste.append(500);
 		liste.append(300);
 		liste.append(150);
+		liste.append(250);
+		liste.append(400);
+		liste.append(700);
 	}
 
 	public void output() {
@@ -64,5 +67,38 @@ public class Programm {
 			liste.next();
 		}
 		return false;
+	}
+
+	public void sort() {
+		List<Integer> temp = new List<Integer>();
+		liste.toFirst();
+		while (liste.hasAccess()) {
+			int current = liste.getContent();
+			liste.next();
+			temp.toFirst();
+			while (temp.hasAccess() && temp.getContent() < current) {
+				temp.next();
+			}
+			if (temp.hasAccess()) {
+				temp.insert(current);
+			} else {
+				temp.append(current);
+			}
+		}
+		liste = temp;
+	}
+
+
+	public void sortinsert(int x){
+		liste.toFirst();
+		while (liste.hasAccess() && liste.getContent() < x) {
+			liste.next();
+		}
+		if (liste.hasAccess()) {
+			liste.insert(x);
+		} else {
+			liste.append(x);
+		}
+
 	}
 }
