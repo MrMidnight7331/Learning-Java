@@ -99,6 +99,22 @@ public class Programm {
 		} else {
 			liste.append(x);
 		}
+	}
 
+	public List<Integer> copyfrom(int x) {
+		List<Integer> temp = new List<Integer>();
+		liste.toFirst();
+		while (liste.hasAccess()) {
+			if (liste.getContent() > x) {
+				temp.append(liste.getContent());
+			}
+			liste.next();
+		}
+		temp.toFirst();
+		while (temp.hasAccess()) {
+			System.out.println(temp.getContent());
+			temp.next();
+		}
+		return temp;
 	}
 }
