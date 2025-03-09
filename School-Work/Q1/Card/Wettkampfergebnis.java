@@ -1,95 +1,60 @@
-public class Wettkampfergebnis {
-    private List<Wettkampfkarte> alleWettkaempfe;
-    private int anzahlWettkampfkarten;
+public class Wettkampfergebnis
+{
+	private List<Wettkampfkarte> alleWettkaempfe;
+	private int anzahlWettkampfkarten;
 
-    public Wettkampfergebnis() {
-        // Liste wird erzeugt und Anzahl der Wettkampfkarten auf 0 setzen.
-        anzahlWettkampfkarten = 0;
-        alleWettkaempfe = new List<>();
-    }
+	public Wettkampfergebnis()
+	{
+		// Liste wird erzeugt und Anzahl der Wettkampfkarten auf 0 setzen.
+		alleWettkaempfe = new List<>();
+		anzahlWettkampfkarten = 0;
+	}
 
-    public void ergaenzeKarte(Wettkampfkarte pW) {
-        // Die neue Wettkampfkarte pW wird hinten in die Liste eingefügt
-        // und die Anzahl der Wettkampfkarten erhöht sich um eins.
-        Wettkampfkarte wk = new Wettkampfkarte(pW.getName(), pW.getVorname(), pW.getKlasse());
-        alleWettkaempfe.append(wk);
-        anzahlWettkampfkarten++;
-    }
+	public void ergaenzeKarte(Wettkampfkarte pW){
+		// Neue Wettkampfkarte hinzufügen und Anzahl erhöhen
+		alleWettkaempfe.append(pW);
+		anzahlWettkampfkarten++;
+	}
 
-    public Wettkampfkarte besteKarte(int pDisziplin) {
-        // Je nach angegebener Disziplin wird die Beste Wettkampfkarte aus der Liste gesucht und zurückgegeben.
-        // Sortiere die Liste nach der angegebenen Disziplin und gib das erste Element zurück.
-        List<Wettkampfkarte> hilfsliste = new List<>();
-        alleWettkaempfe.toFirst();
-        while (alleWettkaempfe.hasAccess()) {
-            Wettkampfkarte wk = alleWettkaempfe.getContent();
-            hilfsliste.append(wk);
-            alleWettkaempfe.next();
-        }
+	public Wettkampfkarte besteKarte(int pDisziplin){
+		alleWettkaempfe.toFirst();
+		Wettkampfkarte beste = null;
+		int bestePunkte = -1;
 
-        hilfsliste.toFirst();
-        Wettkampfkarte besteKarte = hilfsliste.getContent();
-        while (hilfsliste.hasAccess()) {
-            if (hilfsliste.getContent().getPunkte(pDisziplin) > besteKarte.getPunkte(pDisziplin)) {
-                besteKarte = hilfsliste.getContent();
-            }
-            hilfsliste.next();
-        }
-        return besteKarte;
-    }
+		while (alleWettkaempfe.hasAccess()) {
+			Wettkampfkarte aktuelle = alleWettkaempfe.getContent();
+			if (aktuelle.getPunkte(pDisziplin) > bestePunkte) {
+				bestePunkte = aktuelle.getPunkte(pDisziplin);
+				beste = aktuelle;
+			}
+			alleWettkaempfe.next();
+		}
+		return beste;
+	}
 
-    // UNVERÄNDERT LASSEN
-    public void ausgabe() {
-        alleWettkaempfe.toFirst();
-        while (alleWettkaempfe.hasAccess()) {
-            System.out.println(alleWettkaempfe.getContent().toString());
-            alleWettkaempfe.next();
-        }
-    }
+	public void auswahlSort(int pDisziplin) {
+		List<Wettkampfkarte> hilfsliste = new List<>();
 
-    public void auswahlSort(int pDisziplin) {
-        // Die Wettkampfkarten in der Liste alleWettkaempfe sollen
-        // so sortiert werden, dass sie in einer absteigenden
-        // Reihenfolge nach der angegebenen Disziplin aufgelistet
-        // sind.
-        // Tipp: Benutze eine Hilfsliste. Aber am Ende muss die
-        // korrekte Reihenfolge in der Liste alleWettkaempfe vorliegen.
+		while (!alleWettkaempfe.isEmpty()) {
+			Wettkampfkarte beste = besteKarte(pDisziplin);
+			alleWettkaempfe.toFirst();
 
-        List<Wettkampfkarte> hilfsliste = new List<>();
-        alleWettkaempfe.toFirst();
-        while (alleWettkaempfe.hasAccess()) {
-            Wettkampfkarte wk = alleWettkaempfe.getContent();
-            hilfsliste.append(wk);
-            alleWettkaempfe.next();
-        }
+			while (alleWettkaempfe.hasAccess()) {
+				if (alleWettkaempfe.getContent() == beste) {
+					alleWettkaempfe.remove();
+					break;
+				}
+				alleWettkaempfe.next();
+			}
 
-        // Sort the hilfsliste based on the specified discipline
-        hilfsliste.toFirst();
-        while (hilfsliste.hasAccess()) {
-            Wettkampfkarte current = hilfsliste.getContent();
-            hilfsliste.next();
-            while (hilfsliste.hasAccess()) {
-                if (hilfsliste.getContent().getPunkte(pDisziplin) > current.getPunkte(pDisziplin)) {
-                    Wettkampfkarte temp = current;
-                    current = hilfsliste.getContent();
-                    hilfsliste.setContent(temp);
-                }
-                hilfsliste.next();
-            }
-            hilfsliste.toFirst();
-        }
+			hilfsliste.append(beste);
+		}
 
-        // Copy sorted hilfsliste back to alleWettkaempfe
-        alleWettkaempfe = new List<>();
-        hilfsliste.toFirst();
-        while (hilfsliste.hasAccess()) {
-            alleWettkaempfe.append(hilfsliste.getContent());
-            hilfsliste.next();
-        }
-    }
+		alleWettkaempfe = hilfsliste;
+	}
 
-    // UNVERÄNDERT LASSEN
-    public List<Wettkampfkarte> getWettkampfkarten() {
-        return alleWettkaempfe;
-    }
+	// UNVERÄNDERT LASSEN
+	public List<Wettkampfkarte> getWettkampfkarten(){
+		return alleWettkaempfe;
+	}
 }
