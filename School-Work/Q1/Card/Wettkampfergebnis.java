@@ -1,22 +1,18 @@
-public class Wettkampfergebnis
-{
+public class Wettkampfergebnis {
 	private List<Wettkampfkarte> alleWettkaempfe;
 	private int anzahlWettkampfkarten;
 
-	public Wettkampfergebnis()
-	{
-		// Liste wird erzeugt und Anzahl der Wettkampfkarten auf 0 setzen.
+	public Wettkampfergebnis() {
 		alleWettkaempfe = new List<>();
 		anzahlWettkampfkarten = 0;
 	}
 
-	public void ergaenzeKarte(Wettkampfkarte pW){
-		// Neue Wettkampfkarte hinzufügen und Anzahl erhöhen
+	public void ergaenzeKarte(Wettkampfkarte pW) {
 		alleWettkaempfe.append(pW);
 		anzahlWettkampfkarten++;
 	}
 
-	public Wettkampfkarte besteKarte(int pDisziplin){
+	public Wettkampfkarte besteKarte(int pDisziplin) {
 		alleWettkaempfe.toFirst();
 		Wettkampfkarte beste = null;
 		int bestePunkte = -1;
@@ -53,8 +49,7 @@ public class Wettkampfergebnis
 		alleWettkaempfe = hilfsliste;
 	}
 
-	// UNVERÄNDERT LASSEN
-	public List<Wettkampfkarte> getWettkampfkarten(){
+	public List<Wettkampfkarte> getWettkampfkarten() {
 		return alleWettkaempfe;
 	}
 }

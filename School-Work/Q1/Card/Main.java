@@ -1,5 +1,9 @@
 public class Main {
 	public static void main(String[] args) {
-		new WettkampfFrame();
+		WettkampfFrame frame = new WettkampfFrame();
+		frame.setVisible(true);
+
 	}
+
+
 }

@@ -1,5 +1,4 @@
-public class Wettkampfkarte
-{
+public class Wettkampfkarte {
 	private String name;
 	private String vorname;
 	private String klasse;
@@ -8,10 +7,8 @@ public class Wettkampfkarte
 	private int punkteWurf;   // 3
 	// 4 = Gesamtwert
 
-
-	public Wettkampfkarte(String pName, String pVorname, String pKlasse)
-	{
-		// Anfangswerte für Attribute festlegen
+	// Existing constructor remains unchanged
+	public Wettkampfkarte(String pName, String pVorname, String pKlasse) {
 		name = pName;
 		vorname = pVorname;
 		klasse = pKlasse;
@@ -20,32 +17,51 @@ public class Wettkampfkarte
 		punkteWurf = 0;
 	}
 
-	public String getName(){
+	// New constructor to handle the single string input
+	public Wettkampfkarte(String inhalt) {
+		String[] parts = inhalt.split(",");
+		if (parts.length >= 3) {
+			this.name = parts[0];
+			this.vorname = parts[1];
+			this.klasse = parts[2];
+		}
+		if (parts.length >= 4) {
+			this.punkteLauf = Integer.parseInt(parts[3]);
+		}
+		if (parts.length >= 5) {
+			this.punkteSprung = Integer.parseInt(parts[4]);
+		}
+		if (parts.length >= 6) {
+			this.punkteWurf = Integer.parseInt(parts[5]);
+		}
+	}
+
+	public String getName() {
 		return name;
 	}
 
-	public String getVorname(){
+	public String getVorname() {
 		return vorname;
 	}
 
-	public String getKlasse(){
+	public String getKlasse() {
 		return klasse;
 	}
 
-	public int getPunkte(int pDisziplin){
+	public int getPunkte(int pDisziplin) {
 		if (pDisziplin == 1) return punkteLauf;
 		if (pDisziplin == 2) return punkteSprung;
 		if (pDisziplin == 3) return punkteWurf;
+		if (pDisziplin == 4) return punkteLauf + punkteSprung + punkteWurf;
 		return -1;
 	}
 
-	public void setzePunkte(int pDisziplin, int pPunkte){
+	public void setzePunkte(int pDisziplin, int pPunkte) {
 		if (pDisziplin == 1) punkteLauf = pPunkte;
 		if (pDisziplin == 2) punkteSprung = pPunkte;
 		if (pDisziplin == 3) punkteWurf = pPunkte;
 	}
 
-	// UNVERÄNDERT LASSEN
 	public String toString() {
 		return name + "," + klasse + "," + punkteLauf + "," + punkteSprung + "," + punkteWurf;
 	}

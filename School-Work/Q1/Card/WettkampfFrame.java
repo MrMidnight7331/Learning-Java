@@ -1,4 +1,3 @@
-
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
@@ -105,12 +104,29 @@ public class WettkampfFrame extends JFrame {
 		btnSortierenDurchAuswahl = new JButton("sortieren");
 		btnSortierenDurchAuswahl.setBounds(38, 111, 132, 23);
 		panel.add(btnSortierenDurchAuswahl);
+
+
+
+		// test button for test input --------------
+		JButton btnTestInput = new JButton("Test Input");
+		btnTestInput.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				dummyInput();
+				showActual();
+			}
+		});
+		btnTestInput.setBounds(10, 101, 210, 23);
+		contentPane.add(btnTestInput);
+
+		//----------------------------------------
+
 		anzeige = new JTextArea();
 		anzeige.setBackground(UIManager.getColor("Button.background"));
 		anzeige.setBorder(new LineBorder(new Color(0, 0, 0)));
 		JScrollPane sp = new JScrollPane(anzeige);
 		sp.setBounds(10, 188, 375, 285);
 		contentPane.add(sp);
+
 		btnSortierenDurchAuswahl.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				sortAction();
@@ -174,6 +190,19 @@ public class WettkampfFrame extends JFrame {
 		} else {
 			// System.out.println("Abgebrochen!");
 		}
+	}
+
+	//test input funct
+	public void dummyInput() {
+		String inhalt = "Max,Mustermann,7,10,30,30";
+		Wettkampfkarte wk = new Wettkampfkarte(inhalt);
+		we.ergaenzeKarte(wk);
+		inhalt = "Maxine,Musterfrau,7,20,20,50";
+		wk = new Wettkampfkarte(inhalt);
+		we.ergaenzeKarte(wk);
+		inhalt = "Maximilian,Musterkind,7,30,10,40";
+		wk = new Wettkampfkarte(inhalt);
+		we.ergaenzeKarte(wk);
 	}
 
 }
