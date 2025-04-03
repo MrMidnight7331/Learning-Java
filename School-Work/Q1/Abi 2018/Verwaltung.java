@@ -13,6 +13,17 @@ public class Verwaltung
         /*Die Methode liefert das Grundstücksobjekt mit der Adresse (pStrasse,
         pHausnummer) zurück. Falls zur Adresse kein Grundstücksobjekt existiert,
         wird null zurückgeliefert.*/
+
+        alleGrundstuecke.toFirst();
+        while(alleGrundstuecke.hasAccess()){
+            Grundstueck g = alleGrundstuecke.getContent();
+            if(g.gibStrasse().equals(pStrasse) && g.gibHausnummer().equals(pHausnummer)){
+                return g;
+            }
+            alleGrundstuecke.next();
+        }
+        return null;
+
         
     }
     
@@ -38,10 +49,28 @@ public class Verwaltung
             alleGrundstuecke.next();
         }
     }
-    
+
     public List<Grundstueck> ermittleEinbruchsschwerpunkte(int pMinAnzahl){
-        /* Aufgabe c) */
-        
+        List<Grundstueck> ergebnis = new List<Grundstueck>();
+        alleGrundstuecke.toFirst();
+        while(alleGrundstuecke.hasAccess()){
+            Grundstueck g = alleGrundstuecke.getContent();
+            int anzahl = 0;
+            List<Einbruch> einbrueche = g.gibEinbrueche();
+            einbrueche.toFirst();
+            while(einbrueche.hasAccess()){
+                Einbruch e = einbrueche.getContent();
+                if(!e.istAufgeklaert()){
+                    anzahl++;
+                }
+                einbrueche.next();
+            }
+            if(anzahl >= pMinAnzahl){
+                ergebnis.append(g);
+            }
+            alleGrundstuecke.next();
+        }
+        return ergebnis;
     }
 
     
