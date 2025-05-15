@@ -22,21 +22,17 @@ public class Test
     public void einfuegen(BinaryTree<Integer> b, int a) {
         if (b.getContent() < a){
             einfuegen(b.getRightTree);
-
         }
 
         else if(b.getContent() > a){
             einfuegen(b.getLeftTree);
-
         }
 
         else if(b.getContent() == a){
             System.out.Println("Nope");
-
         }
 
         b.setContent(a);
-       
 
     }
     
