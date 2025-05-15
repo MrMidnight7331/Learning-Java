@@ -87,15 +87,13 @@ public class Test
         
     }
 
-public int count() {
-    return count(tree);
-}
-
 private int count(BinaryTree<Integer> b) {
     if (b == null || b.isEmpty()) {
         return 0; 
     }
     return 1 + count(b.getLeftTree()) + count(b.getRightTree());
-}
+    }
+
+    return count(tree);
 
 }
