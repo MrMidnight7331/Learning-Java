@@ -21,11 +21,11 @@ public class Test
     }      
     public void einfuegen(BinaryTree<Integer> b, int a) {
         if (b.getContent() < a){
-            einfuegen(b.getRightTree);
+            einfuegen(b.getRightTree(),a);
         }
 
         else if(b.getContent() > a){
-            einfuegen(b.getLeftTree);
+            einfuegen(b.getLeftTree(),a);
         }
 
         else if(b.getContent() == a){
